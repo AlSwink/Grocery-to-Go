@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <title> Grocery 2 Go </title>
+   <center><h1> About Us </h1></center>
+
+</head>
+<body>
+
+   <p> Thank you for checking out our page and keep reading to learn about all of the things we can offer you!</p> 
+
+   <p>Have you ever been at home, doing the laundry, cleaning, or just got your newborn to finally get some sleep and 
+      realize you need groceries for tonights Macaroni and Cheese? Well that is what we are here for! Now you can take care 
+      of whatever has you stuck at the house and let us do the grocery shopping for you! Once you have an account 
+      all you have to do is sign in to our easy to use website, load your groceries into your shopping cart, and check out!</p>    
+
+   <p>Pay us with your card you have linked to your account or in cash when we deliver the groceries to your door. It's that easy!</p>
+
+   <p>So what are you waiting for? Get your groceries to go today!</p>
+ 
+   <br>
+   <p><center> Click <a href="http://www.csce.uark.edu/~cwphilli/Grocery-to-Go/home_page.php"> here </a> to create an account. </center></p>
+
+</body>
+</html>
