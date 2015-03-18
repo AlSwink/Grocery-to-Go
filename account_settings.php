@@ -1,49 +1,62 @@
 <!DOCTYPE html>
-<html>
+
 <?php
-
+	session_start();
+	$servername = "localhost";
+	$username = "ajswink";
+	$password = "grocery";
+	$dbname = "ajswink";
+	$conn = new mysqli($servername,$username,$password,$dbname);
+	if ($conn->connect_error) {
+	die("Connection failed: ".$conn->connect_error);
+	}
    //edits account info
-   if(isset($_GET['Accfname'])){
-      $repfname=$_GET['Accfname'];
-      $replname=$_GET['Acclname'];
-      $repemail=$_GET['AccEmail']
-      $repcard=$_GET['AccCard'] 
-    //  $repcolor=$_GET['AccColor'];
-   //   $reptitle=$_GET['AccTitle'];
-    //  $repimage=$_GET['AccImage'];
-      $data=file("customer-account-info.txt");
-      $search=$_SESSION['user'].";".$_SESSION['password'].";";
-      $result='';
-      foreach($data as $line){
-         if(substr($line,0,strlen($search))==$search){
-            $result .=$search.$repfname.";".$replname.";".$repemail.";".$repcard.PHP_EOL;
-         }
-         else{
-            $result .=$line;
-         }
-      }
-   file_put_contents("customer-account-info.txt",$result);
+   if(isset($_POST['change'])){
+      $repfname=$_POST['Accfname'];
+      $replname=$_POST['Acclname'];
+      $repaddr=$_POST['AccAddr'];
+      $repmail=$_POST['AccEmail'];
+      
+	 $sql="UPDATE information SET firstname='".$repfname."',lastname='".$replname."',email='".$repmail."' WHERE username='".$_SESSION['user']."'";
 
+	if ($conn->query($sql) === TRUE) {
+	header("Location: account_settings.php");
+	} 	
+	else {
+    echo "Error updating record: " . $conn->error;
+	}
    }
 
-echo "<title>User Settings</title>
-        <head>User Setings</head>
-        <body bgcolor=#A9F5D0}>
-        <p>Welcome, {$_SESSION['user']}.</p>
+echo "<html>
+		<title>Grocery to Go</title>
+        <head>Account Settings</head>
+        <body>
+        <p>You have logged in.</p>
        
-        <br><hr><br>';
+        <br><hr><br>";
 
-  echo  "<form action='home_page.php' name='editAccount' method='GET'>
-        First name:<input type='text' value='{$_SESSION['firstname']}' name='Accfname'>
-        Last name:<input type='text' value='{$_SESSION['lastname']}' name='Acclname'>
-        Email: <input type='text' value='{$_SESSION['email']}' name='AccEmail'>
-       
-        <input type='submit' value='Make Changes'></form>
-          
-        <center><a href='http://www.csce.uark.edu/~cphilli/Grocery-to-Go/home_page.php'> Catalog Page </a></center>
-        <div>First Name: {$_SESSION['firstname']}</div>
-        </body>";
+ echo" <h1><center> Grocery to Go Account Page </center></h1>
+        <table style='width:100%'><tr>
+        <td><a href='cart.html'><center> Shopping Cart </center></a></td>
+        <td>
+        <form action='logout.php' name='logout' method='POST'>
+        <input type='hidden' value='doLogout' name='logout'>
+        <input type='submit' value='Logout'></form>
+        </td>
+        </table><br>";
+echo "<form action='account_settings.php' name='editAccount' method='POST'>
+        First name:<input type='text' value='".$_SESSION['firstname']."' name='Accfname'>
+        Last name:<input type='text' value='".$_SESSION['lastname']."' name='Acclname'>
+        Address:<input type='text' value='".$_SESSION['address']."' name='AccAddr'>
+        Title:<input type='text' value='".$_SESSION['email']."' name='AccEmail'>
+        
+        <input type='submit' name='change' value='Make Changes'></form>";
+
+ echo   "<center><a href='home_page.php'> Catalog Page </a></center>
+        
+        </body>
+		</html>";
+
+
 
 ?>
-</html>
-
