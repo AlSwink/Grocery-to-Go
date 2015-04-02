@@ -16,8 +16,11 @@
       $replname=$_POST['Acclname'];
       $repaddr=$_POST['AccAddr'];
       $repmail=$_POST['AccEmail'];
-      
-	 $sql="UPDATE information SET firstname='".$repfname."',lastname='".$replname."',email='".$repmail."' WHERE username='".$_SESSION['user']."'";
+      $_SESSION['firstname']=$repfname;
+      $_SESSION['lastname']=$replname;
+      $_SESSION['address']=$repaddr;
+      $_SESSION['email']=$repmail;
+	 $sql="UPDATE information SET firstname='".$repfname."',lastname='".$replname."',email='".$repmail."',shipping='".$repaddr."' WHERE username='".$_SESSION['user']."'";
 
 	if ($conn->query($sql) === TRUE) {
 	header("Location: account_settings.php");

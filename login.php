@@ -70,7 +70,15 @@ if ($conn->connect_error) {
  	 $hour = time() + 3600; 
 	 $_SESSION['user']= $_POST['username']; 
 	 $_SESSION['password']=$_POST['pass'];	 
-	 $_SESSION['login']=1;
+	 $_SESSION['login']=true;
+	$result=$conn->query("SELECT * FROM information WHERE username='".$_POST['username']."'");
+	$row = $result->fetch_object();
+	$_SESSION['user']=$_POST['username'];
+	$_SESSION['password']=$_POST['pass'];
+	$_SESSION['firstname']=$row->firstname;
+	$_SESSION['lastname']=$row->lastname;
+	$_SESSION['address']=$row->shipping;
+	$_SESSION['email']=$row->email;
  //then redirect them to the members area 
  $conn->close();
  header("Location: account_settings.php"); 
