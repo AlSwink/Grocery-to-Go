@@ -29,13 +29,14 @@ if($conn->query($sql) === TRUE) {
 echo "Error creating table: " . $conn->error;
 }
 }
+
 $check = $conn->query("SELECT * FROM catalog")or die(mysql_error());
  	while($info = mysqli_fetch_array( $check ))
 
 {
 
 $name = $info['product'];
-
+$number=$info['prodid'];
 $descriptionA = $info['description1'];
 $descriptionB = $info['description2'];
 $descriptionC = $info['description3'];
@@ -49,11 +50,14 @@ echo "
  <table border='1' style='width:100%'>
   <tr>
     <td>".$name."</td>
+    <td><form method='post' action='update.php'>
+	<input type='hidden' name=product_id value='".$number."'>
+	<input type='submit' name='cart_add' value='Add to Cart'></form></td>
   </tr>
   <tr>
     <td>".$descriptionA.",".$descriptionB.",".$descriptionC."</td>
     <td>Stock available:".$amount."</td>
-    <td>".$price."</td>
+    <td>$".$price."</td>
   </tr>
 </table>";
  

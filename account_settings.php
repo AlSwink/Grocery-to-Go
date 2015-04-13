@@ -40,7 +40,7 @@ echo "<html>
 
  echo" <h1><center> Grocery to Go Account Page </center></h1>
         <table style='width:100%'><tr>
-        <td><a href='cart.html'><center> Shopping Cart </center></a></td>
+        <td><a href='cart.php'><center> Shopping Cart </center></a></td>
         <td>
         <form action='logout.php' name='logout' method='POST'>
         <input type='hidden' value='doLogout' name='logout'>
@@ -50,8 +50,13 @@ echo "<html>
 echo "<form action='account_settings.php' name='editAccount' method='POST'>
         First name:<input type='text' value='".$_SESSION['firstname']."' name='Accfname'>
         Last name:<input type='text' value='".$_SESSION['lastname']."' name='Acclname'>
-        Address:<input type='text' value='".$_SESSION['address']."' name='AccAddr'>
-        Title:<input type='text' value='".$_SESSION['email']."' name='AccEmail'>
+        Email:<input type='text' value='".$_SESSION['email']."' name='AccEmail'>
+		<br>
+		Shipping Address:<input type='text' value='".$_SESSION['address']."' name='AccAddr'>
+		<br>
+		Billing Address:<input type='text' value='".$_SESSION['billing']."' name='AccBill'>
+		Card Number:<input type='int' value='".$_SESSION['cardnum']."' name='AccCard'>
+
         
         <input type='submit' name='change' value='Make Changes'></form>";
 

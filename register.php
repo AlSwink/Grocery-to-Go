@@ -19,12 +19,14 @@ password VARCHAR(30) NOT NULL,
 firstname VARCHAR(30),
 lastname VARCHAR(30),
 email VARCHAR(50),
+billing TEXT,
+cardnum INT(20) UNSIGNED NOT NULL,
 reg_date TIMESTAMP
 )";
 
-	if ($conn->query("SHOW TABLES LIKE 'myTable'")->num_rows==0) {
+	if ($conn->query("SHOW TABLES LIKE 'information'")->num_rows==0) {
 	if($conn->query($sql) === TRUE)	{
-		echo "Table MyGuests created successfully";
+		//echo "Table MyGuests created successfully";
 	} else {
 		echo "Error creating table: " . $conn->error;
 	}
@@ -121,39 +123,6 @@ or die(mysql_error());
 
  else 
  {	
- ?>
-
-
- 
- <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-
- <table border="0">
-
- <tr><td>Username:</td><td>
-
- <input type="text" name="username" maxlength="60">
-
- </td></tr>
-
- <tr><td>Password:</td><td>
-
- <input type="password" name="pass" maxlength="10">
-
- </td></tr>
-
- <tr><td>Confirm Password:</td><td>
-
- <input type="password" name="pass2" maxlength="10">
-
- </td></tr>
-
- <tr><th colspan=2><input type="submit" name="submit" 
-value="Register"></th></tr> </table>
-
- </form>
-
-
- <?php
-
+    header("Location: home_page.php")
  }
  ?> 
