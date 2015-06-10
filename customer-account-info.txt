@@ -1,7 +1,0 @@
-patitz;pass1;Matthew;Patitz;yellow;Hello;http://self-assembly.net/mpatitz/Matt-DC_web.jpg
-newuser;pass1;billy;joe;lightgreen;Welcome to Grocery to Go!;http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Stick_Figure.svg/170px-Stick_Figure.svg.png
-
-
-
-
-

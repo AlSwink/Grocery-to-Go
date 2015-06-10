@@ -20,7 +20,7 @@ firstname VARCHAR(30),
 lastname VARCHAR(30),
 email VARCHAR(50),
 billing TEXT,
-cardnum INT(20) UNSIGNED NOT NULL,
+cardnum BIGINT(20) UNSIGNED NOT NULL,
 reg_date TIMESTAMP
 )";
 
@@ -123,6 +123,6 @@ or die(mysql_error());
 
  else 
  {	
-    header("Location: home_page.php")
+   // header("Location: home_page.php")
  }
  ?> 

@@ -98,7 +98,7 @@ if ($conn->connect_error) {
 
  // if they are not logged in 
 
-header("Location: home_page.php")
+//header("Location:account_settings.php")
 
  } 
 

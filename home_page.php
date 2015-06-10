@@ -11,37 +11,39 @@
 //first page
 if(!isset($_SESSION['login']))
 {
-	$style1="<style>
-		body {
-			background­-color: #F2F2F2;
-			border-­radius: 25px;
+	
+     echo "<html>
+        <title>Grocery to Go</title>
+		<style>
+		body{
+			background-color: #F2F2F2;
+			border-radius: 25px;
 			border: 2px solid #8AC007;
 			margin: 10px;
 			padding: 20px;
-			width: 95%;
+			width: 1215px;
 			height: 100%;
-			font­-family: 'Trebuchet MS', sans-­serif;
+			font-family: 'Trebuchet MS', sans-serif;
 		}
-		h1 {
-			text-­shadow: 2px 2px 4px #000000;
-			font­-size: 50px;
-			border­-radius: 25px;
-			box­-shadow: 6px 6px 3px #000000;
+		h1{
+			text-shadow: 2px 2px 4px #000000;
+			font-size: 50px;
+			color: #F2F2F2;
+			border-radius: 25px;
+			box-shadow: 6px 6px 3px #000000;
 			background: #8AC007;
-			padding: 20px;
-			width: 40%;
+			padding:20px;
+			width: 500px;
 			height: 50px;
-			background-­image: url('http://www.gardenweasel.com/wp-content/uploads/2014/01/shopping­cart.png');
-			background­-size: 65px;
-			background­-repeat: no-­repeat;
-			background­-position: 95% 60%;
+			background-image: url('http://www.gardenweasel.com/wp-content/uploads/2014/01/shopping-cart.png');
+			background-size: 65px;
+			background-repeat: no-repeat;
+			background-position: 450px, 150px;
+			position: relative;
 		}
-		</style>";
-     echo "<html>
-        <title>Grocery to Go</title>";
 		
-        echo $style1;
-		echo "<center><h1 style='color:lightgreen'>Grocery to Go</h1></center>
+		</style>
+		<head><center><h1>Grocery to Go</h1></center></head>
         <body>If you have an existing account, please log in here:
         <table>
         <form action='login.php' method='POST' name='login'>
@@ -50,6 +52,8 @@ if(!isset($_SESSION['login']))
         </table>
         <input type='submit' name='submit' value='Login'>
         </form>
+		<p>If you are a store employee, please log in here:</p>
+		 <a href='employee_page.php'>Click Here</a>
         <p style='text-align:right'>
         <a href='about_us.html'> About Us </a>
         </p>
@@ -68,7 +72,7 @@ if(!isset($_SESSION['login']))
         <input type='submit' value='Create account'>
         </form></body>";
 
-    // echo  "<div>First Name: {$_SESSION['firstname']}</div>";
+
 }
 
 
@@ -79,58 +83,62 @@ if(!isset($_SESSION['login']))
   
 
   echo" <style>
-  body {
-  background­color: #F2F2F2;
-  border­radius: 25px;
-  border: 2px solid #8AC007;
-  margin: 10px;
-  padding: 20px;
-  width: 95%;
-  height: 100%;
-  font­family: 'Trebuchet MS', sans­serif;
-  }
-  h1 {
-  text­shadow: 2px 2px 4px #000000;
-  font­size: 50px;
-  border­radius: 25px;
-  box­shadow: 6px 6px 3px #000000;
-  background: #8AC007;
-  padding: 20px;
-  width: 40%;
-  height: 50px;
-  background­image: url('http://www.gardenweasel.com/wp-content/uploads/2014/01/shopping­cart.png');
-  background­size: 65px;
-  background­repeat: no­repeat;
-  background­position: 95% 60%;
-  }
-  ul {
-  list­style­type: none;
-  margin: 0px;
-  padding: 0;
-  overflow: hidden;
-  box­shadow: 1px 1px 1px #000000;
-  border­collapse: collapse;
-  border­radius: 20px;
-  border: 1px solid #A4A4A4;
-  }
-  li {
-  float: left;
-  width: 240px;
-  }
-  a:link, a:visited {
-  display: block;
-  width: 120px;
-  color: #000000;
-  background­color: #F2F2F2;
-  text­align: center;
-  padding: 4px;
-  text­decoration: none;
-  }
-  a:hover, a:active {
-  background­color: #8AC007;
-  }
-  </style>
-  <h1 style='color:#F2F2F2'><center> Grocery to Go Catalog Page </center></h1>
+		body{
+			background-color: #F2F2F2;
+			border-radius: 25px;
+			border: 2px solid #8AC007;
+			margin: 10px;
+			padding: 20px;
+			width: 1215px;
+			height: 100%;
+			font-family: 'Trebuchet MS', sans-serif;
+		}
+		h1{
+			text-shadow: 2px 2px 4px #000000;
+			font-size: 50px;
+			color: #F2F2F2;
+			border-radius: 25px;
+			box-shadow: 6px 6px 3px #000000;
+			background: #8AC007;
+			padding:20px;
+			width: 500px;
+			height: 50px;
+			background-image: url('http://www.gardenweasel.com/wp-content/uploads/2014/01/shopping-cart.png');
+			background-size: 65px;
+			background-repeat: no-repeat;
+			background-position: 450px, 150px;
+			position: relative;
+		}
+		ul{
+			list-style-type: none;
+			margin: 0px
+			padding: 0;
+			overflow: hidden;
+
+			box-shadow: 1px 1px 1px #000000;
+			border-collapse: collapse;
+			border-radius: 20px;
+			border: 1px solid #A4A4A4;
+			}
+		li{
+			float: left;
+			width: 220px;
+			}
+		a:link, a:visited{
+		display: block;
+		width: 120px;
+		color: #000000
+		background-color: #F2F2F2;
+		text-align: center;
+		padding: 4px;
+		text-decoration:none;
+		}
+
+		a:hover, a:active{
+			background-color: #8AC007;
+		}
+		</style>
+		<center><h1>Catalog Page </h1></center>
        <center><ul>
 	   <li> <a href='home_page.php'>Catalog</a></li>
 	   <li> <a href='account_settings.php'>Account Settings</a></li>
@@ -146,12 +154,6 @@ if(!isset($_SESSION['login']))
 
   include("catalog.php");
 
-  echo  "<br>
-        <table style='width:100%'><tr>
-        <td></td>
-        <td><a href='account_settings.php' > Account Settings </a></td>
-        <td><a href='contact_us.html' > Contact Us </a></td>
-        </tr></table>";
 }
 ?>
 </html>

@@ -22,7 +22,62 @@ die("Connection failed: ".$conn->connect_error);
 			<th scope="col">Price</th>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody><style>
+		body{
+			background-color: #F2F2F2;
+			border-radius: 25px;
+			border: 2px solid #8AC007;
+			margin: 10px;
+			padding: 20px;
+			width: 1215px;
+			height: 100%;
+			font-family: 'Trebuchet MS', sans-serif;
+		}
+		h1{
+			text-shadow: 2px 2px 4px #000000;
+			font-size: 50px;
+			color: #F2F2F2;
+			border-radius: 25px;
+			box-shadow: 6px 6px 3px #000000;
+			background: #8AC007;
+			padding:20px;
+			width: 500px;
+			height: 50px;
+			background-image: url('http://www.gardenweasel.com/wp-content/uploads/2014/01/shopping-cart.png');
+			background-size: 65px;
+			background-repeat: no-repeat;
+			background-position: 95% 60%;
+
+		}
+		ul{
+			list-style-type: none;
+			margin: 0px
+			padding: 0;
+			overflow: hidden;
+
+			box-shadow: 1px 1px 1px #000000;
+			border-collapse: collapse;
+			border-radius: 20px;
+			border: 1px solid #A4A4A4;
+			}
+		li{
+			float: left;
+			width: 240px;
+			}
+		a:link, a:visited{
+			display: block;
+			width: 120px;
+			color: #000000
+			background-color: #F2F2F2;
+			text-align: center;
+			padding: 4px;
+			text-decoration:none;
+		}
+
+		a:hover, a:active{
+			background-color: #8AC007;
+		}
+	</style>
 <?php      
  foreach($_SESSION['cart_items'] as $value){
 

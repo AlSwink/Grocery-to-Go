@@ -1,15 +1,83 @@
 <!DOCTYPE html>
 <html>
-<head>
-
    <title> Contact Us </title>
+   <style>
+		body{
+			background-color: #F2F2F2;
+			border-radius: 25px;
+			border: 2px solid #8AC007;
+			margin: 10px;
+			padding: 20px;
+			width: 1215px;
+			height: 100%;
+			font-family: 'Trebuchet MS', sans-serif;
+		}
+		h1{
+			text-shadow: 2px 2px 4px #000000;
+			font-size: 50px;
+			color: #F2F2F2;
+			border-radius: 25px;
+			box-shadow: 6px 6px 3px #000000;
+			background: #8AC007;
+			padding:20px;
+			width: 500px;
+			height: 50px;
+			background-image: url('http://www.gardenweasel.com/wp-content/uploads/2014/01/shopping-cart.png');
+			background-size: 65px;
+			background-repeat: no-repeat;
+			background-position: 450px, 150px;
+            position: relative;
+		}
+				ul{
+			list-style-type: none;
+			margin: 0px
+			padding: 0;
+			overflow: hidden;
+
+			box-shadow: 1px 1px 1px #000000;
+			border-collapse: collapse;
+			border-radius: 20px;
+			border: 1px solid #A4A4A4;
+			}
+		li{
+			float: left;
+			width: 220px;
+			}
+		a:link, a:visited{
+		display: block;
+		width: 120px;
+		color: #000000
+		background-color: #F2F2F2;
+		text-align: center;
+		padding: 4px;
+		text-decoration:none;
+		}
+
+		a:hover, a:active{
+			background-color: #8AC007;
+		}
+		</style>
+   <body>
    <center><h1> Contact Us </h1></center>
+       <center>
+           <ul>
+               <li> <a href='home_page.php'>Catalog</a></li>
+               <li> <a href='account_settings.php'>Account Settings</a></li>
+               <li> <a href='cart.php'>Shopping Cart</a></li>
+               <li> <a href='contact_us.html'>Contact Us</a></li>
+               <li>
+                   <form action='logout.php' name='logout' align='center' method='post'>
+                       <input type='hidden' value='doLogout' name='logout'>
+                       <input type='submit' value='Logout'>
+                   </form>
+               </li>
+           </ul>
+       </center><br><br>
 
-</head>
-<body>
 
-   <p> Contact Information. </p>
-   <center><a href="home_page.php"> Catalog Page </a></center>
+   <p> Contact Webmaster. </p>
+   <p>ajswink@uark.edu</p>
+ 
 
 </body>
 </html>
